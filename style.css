@@ -506,3 +506,35 @@ footer { border-top: 1px solid var(--line); padding: 4rem 0 0; }
 .testimonial-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--surface-2); border: 1px solid var(--line); border-radius: 30px; padding: 0.5rem 1.1rem; font-family: var(--font-mono); font-size: 0.85rem; color: var(--text); margin-bottom: 1.6rem; }
 .testimonial-badge i { color: #ffb400; }
 @media (max-width: 720px) { .testimonial-grid { grid-template-columns: 1fr; } }
+
+/* Keyword Constellation — ambient SEO keyword field behind hero */
+.keyword-field { position: absolute; inset: 0; overflow: hidden; z-index: 0; pointer-events: none; }
+.kw-node {
+  position: absolute; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em;
+  color: var(--text-faint); background: rgba(255,255,255,0.02); border: 1px solid var(--line);
+  border-radius: 20px; padding: 0.35rem 0.8rem; white-space: nowrap; opacity: 0;
+  animation: kwFadeDrift 16s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+.kw-node::before { content: '#'; color: var(--accent); opacity: 0.7; margin-right: 0.15rem; }
+@keyframes kwFadeDrift {
+  0%   { opacity: 0; transform: translate(0,0); }
+  8%   { opacity: 0.55; }
+  50%  { opacity: 0.55; transform: translate(var(--kx,10px), var(--ky,-14px)); }
+  92%  { opacity: 0.55; }
+  100% { opacity: 0; transform: translate(0,0); }
+}
+.keyword-field.parallax .kw-node { transition: transform 0.6s cubic-bezier(.2,.6,.2,1); }
+
+/* Typewriter role cycler in eyebrow */
+.eyebrow-cycle { color: var(--accent); font-family: var(--font-mono); font-weight: 600; }
+.eyebrow-cycle::after { content: ''; display: inline-block; width: 2px; height: 0.9em; background: var(--accent); margin-left: 2px; vertical-align: -2px; animation: caretBlink 0.9s step-end infinite; }
+@keyframes caretBlink { 50% { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .kw-node, .eyebrow-cycle::after { animation: none !important; transition: none !important; }
+  .kw-node { opacity: 0.35; }
+}
+@media (max-width: 720px) {
+  .keyword-field { display: none; }
+}

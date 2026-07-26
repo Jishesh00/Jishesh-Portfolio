@@ -78,6 +78,50 @@ if (rankNum) {
   setInterval(tick, 1400);
 }
 
+// ── KEYWORD FIELD PARALLAX (desktop only, respects reduced motion) ──
+const kwField = document.getElementById('keywordField');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (kwField && !prefersReducedMotion && window.matchMedia('(min-width: 900px)').matches) {
+  kwField.classList.add('parallax');
+  const heroEl = document.getElementById('hero');
+  heroEl.addEventListener('mousemove', (e) => {
+    const rect = heroEl.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width - 0.5;
+    const py = (e.clientY - rect.top) / rect.height - 0.5;
+    kwField.querySelectorAll('.kw-node').forEach((node, idx) => {
+      const depth = 8 + (idx % 4) * 6;
+      node.style.setProperty('--parallax-x', `${px * depth}px`);
+      node.style.setProperty('--parallax-y', `${py * depth}px`);
+      node.style.marginLeft = `${px * depth}px`;
+      node.style.marginTop = `${py * depth}px`;
+    });
+  });
+  heroEl.addEventListener('mouseleave', () => {
+    kwField.querySelectorAll('.kw-node').forEach(node => { node.style.marginLeft = '0'; node.style.marginTop = '0'; });
+  });
+}
+
+// ── TYPEWRITER EYEBROW CYCLER ──
+const eyebrowEl = document.getElementById('eyebrowCycle');
+if (eyebrowEl && !prefersReducedMotion) {
+  const roles = ['SEO EXPERT', 'LOCAL SEO SPECIALIST', 'DIGITAL MARKETING CONSULTANT', 'SEO CONSULTANT IN NEPAL'];
+  let roleIdx = 0, charIdx = roles[0].length, deleting = false;
+  eyebrowEl.textContent = roles[0];
+  function typeLoop() {
+    const current = roles[roleIdx];
+    if (!deleting) {
+      charIdx++;
+      if (charIdx > current.length) { deleting = true; setTimeout(typeLoop, 1800); return; }
+    } else {
+      charIdx--;
+      if (charIdx < 0) { deleting = false; roleIdx = (roleIdx + 1) % roles.length; charIdx = 0; setTimeout(typeLoop, 400); return; }
+    }
+    eyebrowEl.textContent = current.slice(0, charIdx);
+    setTimeout(typeLoop, deleting ? 35 : 55);
+  }
+  setTimeout(typeLoop, 2200);
+}
+
 // ── FORMSPREE SHARED SUBMIT ──
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mlgyzzrq";
 function submitToFormspree(form) {
