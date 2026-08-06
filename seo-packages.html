@@ -31,6 +31,26 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://jisheshlamichhane.com.np/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "SEO Packages",
+      "item": "https://jisheshlamichhane.com.np/seo-packages.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="grain"></div>
@@ -40,7 +60,7 @@
       <img src="assets/jishesh-lamichhane-logo.png" alt="Jishesh Lamichhane - SEO Expert Nepal">
     </a>
     <nav class="nav-links" id="navLinks">
-      <a href="index.html" class="active">Home</a>
+      <a href="index.html">Home</a>
 <a href="about.html">About</a>
 <div class="nav-item has-mega">
       <button class="nav-mega-trigger">Services <i class="fa-solid fa-chevron-down"></i></button>
@@ -58,9 +78,9 @@
 <a href="services/social-media-marketing.html"><span class="mega-mono">SM</span><span><strong>Social Media Marketing</strong><small>Organic social media strategy and content that grows your audience and supports your SEO.</small></span></a>
 <span class="mega-heading">Guides</span>
 <a href="seo-services-nepal.html"><span class="mega-mono">SN</span><span><strong>SEO Services in Nepal</strong><small>Full overview of technical, local and content SEO services, all in one place.</small></span></a>
-<a href="seo-packages.html"><span class="mega-mono">PK</span><span><strong>SEO Packages</strong><small>Compare Basic, Standard and Premium SEO packages and pricing.</small></span></a>
       </div>
     </div>
+<a href="seo-packages.html" class="active">Packages</a>
 <a href="blog/index.html">Blog</a>
 <a href="work.html">Work</a>
 <a href="contact.html">Contact</a>
@@ -86,8 +106,8 @@
 <a href="services/digital-consulting.html">Digital Consulting</a>
 <a href="services/social-media-marketing.html">Social Media Marketing</a>
 <a href="seo-services-nepal.html">SEO Services in Nepal</a>
-<a href="seo-packages.html">SEO Packages</a>
     </div>
+    <a href="seo-packages.html">Packages</a>
     <a href="blog/index.html">Blog</a>
     <a href="work.html">Work</a>
     <a href="contact.html">Contact</a>
@@ -108,56 +128,93 @@
 <section class="section">
   <div class="container">
     <p style="max-width:760px;">These SEO packages in Nepal are built for small businesses, growing local brands, and companies ready to compete on harder keywords. No matter which tier fits your business in Kathmandu, Butwal, Pokhara, or anywhere else, you get monthly reporting in plain language and a process tied to real ranking factors, not a fixed checklist copied across every client.</p>
-    <div class="pkg-grid">
-      <div class="pkg-card reveal">
-        <h3>Basic</h3>
-        <div class="pkg-price">Rs 15,000<span>/month</span></div>
-        <p style="margin-bottom:1rem;">Built for a small business just getting started with SEO.</p>
-        <ul>
-          <li><i class="fa-solid fa-check"></i>10 targeted keywords</li>
-          <li><i class="fa-solid fa-check"></i>Full website audit</li>
-          <li><i class="fa-solid fa-check"></i>Basic on-page optimization</li>
-          <li><i class="fa-solid fa-check"></i>Content work on 2 pages</li>
-          <li><i class="fa-solid fa-check"></i>2 blog posts a month</li>
-          <li><i class="fa-solid fa-check"></i>5 backlinks a month</li>
-          <li><i class="fa-solid fa-check"></i>Basic monthly report</li>
-          <li><i class="fa-solid fa-check"></i>Email support</li>
-        </ul>
-        <a href="contact.html" class="btn btn-ghost">Start with Basic</a>
+    <div class="pkg-grid-v2" id="pkgGrid">
+      <div class="pkg-card-v2 pkg-basic">
+        <div class="pkg-head">
+          <div class="pkg-icon-circle"><i class="fa-solid fa-paper-plane pkg-icon-i"></i></div>
+          <h3>Basic</h3>
+        </div>
+        <div class="pkg-body-v2">
+          <div class="pkg-price-row">
+            <div class="pkg-orig">Original Price <del>Rs 20,000</del></div>
+            <div class="pkg-offer-label">OFFER PRICE</div>
+            <div class="pkg-offer-num">Rs <span class="pkg-count" data-target="15000">0</span><span>/mo</span></div>
+          </div>
+          <div class="pkg-feature-list">
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-bullseye"></i></span><span class="frow-label">Keywords Targeted</span><span class="frow-val">10</span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-clipboard-list"></i></span><span class="frow-label">Website Audit</span><span class="frow-val yes"><i class="fa-solid fa-circle-check"></i></span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-file-lines"></i></span><span class="frow-label">On-Page SEO</span><span class="frow-val">Basic</span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-gear"></i></span><span class="frow-label">Technical SEO Fixes</span><span class="frow-val">Limited</span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-pen-to-square"></i></span><span class="frow-label">Content Optimization</span><span class="frow-val">2 Pages</span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-newspaper"></i></span><span class="frow-label">Blog Content</span><span class="frow-val">2/Month</span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-link"></i></span><span class="frow-label">Backlink Building</span><span class="frow-val">5/Month</span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-users"></i></span><span class="frow-label">Competitor Analysis</span><span class="frow-val no">Not Included</span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-location-dot"></i></span><span class="frow-label">Local SEO</span><span class="frow-val no">Not Included</span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-chart-line"></i></span><span class="frow-label">Monthly Reporting</span><span class="frow-val">Basic Report</span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-headset"></i></span><span class="frow-label">Support</span><span class="frow-val">Email</span></div>
+          </div>
+          <a href="contact.html" class="pkg-cta-v2">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
       </div>
-      <div class="pkg-card pkg-popular reveal reveal-d1">
-        <h3>Standard</h3>
-        <div class="pkg-price">Rs 25,000<span>/month</span></div>
-        <p style="margin-bottom:1rem;">Built for a growing business that needs local SEO and steady content.</p>
-        <ul>
-          <li><i class="fa-solid fa-check"></i>25 targeted keywords</li>
-          <li><i class="fa-solid fa-check"></i>Advanced on-page optimization</li>
-          <li><i class="fa-solid fa-check"></i>Full technical SEO fixes</li>
-          <li><i class="fa-solid fa-check"></i>Content work on 5 pages</li>
-          <li><i class="fa-solid fa-check"></i>5 blog posts a month</li>
-          <li><i class="fa-solid fa-check"></i>15 backlinks a month</li>
-          <li><i class="fa-solid fa-check"></i>Competitor analysis + local SEO</li>
-          <li><i class="fa-solid fa-check"></i>Detailed report + chat support</li>
-        </ul>
-        <a href="contact.html" class="btn btn-accent">Start with Standard</a>
+
+      <div class="pkg-card-v2 pkg-standard">
+        <div class="pkg-head">
+          <div class="pkg-icon-circle"><i class="fa-solid fa-star pkg-icon-i"></i></div>
+          <h3>Standard</h3>
+        </div>
+        <div class="pkg-body-v2">
+          <div class="pkg-price-row">
+            <div class="pkg-orig">Original Price <del>Rs 35,000</del></div>
+            <div class="pkg-offer-label">OFFER PRICE</div>
+            <div class="pkg-offer-num">Rs <span class="pkg-count" data-target="25000">0</span><span>/mo</span></div>
+          </div>
+          <div class="pkg-feature-list">
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-bullseye"></i></span><span class="frow-label">Keywords Targeted</span><span class="frow-val">25</span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-clipboard-list"></i></span><span class="frow-label">Website Audit</span><span class="frow-val yes"><i class="fa-solid fa-circle-check"></i></span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-file-lines"></i></span><span class="frow-label">On-Page SEO</span><span class="frow-val">Advanced</span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-gear"></i></span><span class="frow-label">Technical SEO Fixes</span><span class="frow-val yes"><i class="fa-solid fa-circle-check"></i></span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-pen-to-square"></i></span><span class="frow-label">Content Optimization</span><span class="frow-val">5 Pages</span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-newspaper"></i></span><span class="frow-label">Blog Content</span><span class="frow-val">5/Month</span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-link"></i></span><span class="frow-label">Backlink Building</span><span class="frow-val">15/Month</span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-users"></i></span><span class="frow-label">Competitor Analysis</span><span class="frow-val yes"><i class="fa-solid fa-circle-check"></i></span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-location-dot"></i></span><span class="frow-label">Local SEO</span><span class="frow-val yes"><i class="fa-solid fa-circle-check"></i></span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-chart-line"></i></span><span class="frow-label">Monthly Reporting</span><span class="frow-val">Detailed Report</span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-headset"></i></span><span class="frow-label">Support</span><span class="frow-val">Email &amp; Chat</span></div>
+          </div>
+          <a href="contact.html" class="pkg-cta-v2">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
       </div>
-      <div class="pkg-card reveal reveal-d2">
-        <h3>Premium</h3>
-        <div class="pkg-price">Rs 35,000<span>/month</span></div>
-        <p style="margin-bottom:1rem;">Built for businesses ready to compete for harder keywords and scale content fast.</p>
-        <ul>
-          <li><i class="fa-solid fa-check"></i>50 targeted keywords</li>
-          <li><i class="fa-solid fa-check"></i>Full on-page optimization</li>
-          <li><i class="fa-solid fa-check"></i>Priority technical SEO fixes</li>
-          <li><i class="fa-solid fa-check"></i>Content work on 10 pages</li>
-          <li><i class="fa-solid fa-check"></i>10 blog posts a month</li>
-          <li><i class="fa-solid fa-check"></i>30 backlinks a month</li>
-          <li><i class="fa-solid fa-check"></i>Advanced competitor analysis + local SEO</li>
-          <li><i class="fa-solid fa-check"></i>Strategy call + priority support</li>
-        </ul>
-        <a href="contact.html" class="btn btn-ghost">Start with Premium</a>
+
+      <div class="pkg-card-v2 pkg-premium">
+        <div class="pkg-ribbon">★ MOST POPULAR ★</div>
+        <div class="pkg-head">
+          <div class="pkg-icon-circle"><i class="fa-solid fa-crown pkg-icon-i"></i></div>
+          <h3>Premium</h3>
+        </div>
+        <div class="pkg-body-v2">
+          <div class="pkg-price-row">
+            <div class="pkg-orig">Original Price <del>Rs 45,000</del></div>
+            <div class="pkg-offer-label">OFFER PRICE</div>
+            <div class="pkg-offer-num">Rs <span class="pkg-count" data-target="35000">0</span><span>/mo</span></div>
+          </div>
+          <div class="pkg-feature-list">
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-bullseye"></i></span><span class="frow-label">Keywords Targeted</span><span class="frow-val">50</span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-clipboard-list"></i></span><span class="frow-label">Website Audit</span><span class="frow-val yes"><i class="fa-solid fa-circle-check"></i></span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-file-lines"></i></span><span class="frow-label">On-Page SEO</span><span class="frow-val">Full</span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-gear"></i></span><span class="frow-label">Technical SEO Fixes</span><span class="frow-val">Priority</span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-pen-to-square"></i></span><span class="frow-label">Content Optimization</span><span class="frow-val">10 Pages</span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-newspaper"></i></span><span class="frow-label">Blog Content</span><span class="frow-val">10/Month</span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-link"></i></span><span class="frow-label">Backlink Building</span><span class="frow-val">30/Month</span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-users"></i></span><span class="frow-label">Competitor Analysis</span><span class="frow-val">Advanced</span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-location-dot"></i></span><span class="frow-label">Local SEO</span><span class="frow-val yes"><i class="fa-solid fa-circle-check"></i></span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-chart-line"></i></span><span class="frow-label">Monthly Reporting</span><span class="frow-val">Detailed + Strategy Call</span></div>
+            <div class="pkg-feature-row"><span class="frow-icon"><i class="fa-solid fa-headset"></i></span><span class="frow-label">Support</span><span class="frow-val">Priority</span></div>
+          </div>
+          <a href="contact.html" class="pkg-cta-v2">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
       </div>
     </div>
+
 
     <div class="detail-block reveal" style="margin-top:3.2rem;">
       <h2>How to <em>pick the right package</em></h2>

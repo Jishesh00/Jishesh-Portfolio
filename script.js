@@ -122,6 +122,32 @@ if (eyebrowEl && !prefersReducedMotion) {
   setTimeout(typeLoop, 2200);
 }
 
+// ── PRICING CARDS: reveal + price count-up ──
+const pkgCards = document.querySelectorAll('.pkg-card-v2');
+if (pkgCards.length) {
+  const pkgObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const card = entry.target;
+      card.classList.add('visible');
+      const counter = card.querySelector('.pkg-count');
+      if (counter && !counter.dataset.done) {
+        counter.dataset.done = '1';
+        const target = parseInt(counter.dataset.target, 10);
+        const step = Math.max(250, Math.round(target / 40));
+        let cur = 0;
+        const t = setInterval(() => {
+          cur += step;
+          if (cur >= target) { cur = target; clearInterval(t); }
+          counter.textContent = cur.toLocaleString('en-IN');
+        }, 25);
+      }
+      pkgObs.unobserve(card);
+    });
+  }, { threshold: 0.2 });
+  pkgCards.forEach(c => pkgObs.observe(c));
+}
+
 // ── FORMSPREE SHARED SUBMIT ──
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mlgyzzrq";
 function submitToFormspree(form) {
